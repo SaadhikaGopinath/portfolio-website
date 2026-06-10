@@ -1,23 +1,134 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+:root{
+    --primary:#7c3aed;
+    --secondary:#111827;
+    --bg:#f3f4f6;
+    --card:#ffffff;
+    --text:#374151;
 }
 
-header {
-    text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-nav {
-    text-align: center;
-    margin: 20px;
+body{
+    font-family:'Trebuchet MS', sans-serif;
+    background:var(--bg);
+    color:var(--text);
 }
 
-nav a {
-    text-decoration: none;
-    margin: 10px;
+/* Header */
+header{
+    background:linear-gradient(to right,#7c3aed,#2563eb);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
 }
 
-footer {
-    text-align: center;
-    margin-top: 30px;
+header h1{
+    font-size:3rem;
+    letter-spacing:2px;
+}
+
+/* Navigation */
+nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    padding:15px;
+    background:white;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--secondary);
+    font-weight:bold;
+    padding:8px 15px;
+    border-radius:20px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* Main */
+main{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+section{
+    background:var(--card);
+    margin-bottom:20px;
+    padding:25px;
+    border-radius:15px;
+    border-left:6px solid var(--primary);
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+section:hover{
+    transform:scale(1.02);
+}
+
+section h2{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    background:var(--secondary);
+    color:white;
+    padding:20px;
+    margin-top:30px;
+}
+
+/* Responsive Design */
+@media screen and (max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    section{
+        padding:18px;
+    }
+}
+
+/* Dark Mode */
+@media(prefers-color-scheme:dark){
+
+    body{
+        background:#111827;
+        color:#f9fafb;
+    }
+
+    nav{
+        background:#1f2937;
+    }
+
+    nav a{
+        color:white;
+    }
+
+    section{
+        background:#1f2937;
+        color:white;
+    }
 }
